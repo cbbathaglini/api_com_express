@@ -1,12 +1,13 @@
 const express = require("express")
+const rotaLivro = require("./rotas/livro/livro")
+
 const app = express()
 
- const port = 8000
+ const port = 8011
 
- app.get("/", (req, res) => {
-    res.send("Olá mundo aaa")
- })
 
- app.listen(port, () =>{
+app.use("/livros", rotaLivro)
+
+app.listen(port, () =>{
     console.log(`Escutando a porta ${port}`)
 } )
