@@ -1,6 +1,6 @@
 const fs = require("fs")
 const { STATUS_CODES } = require("http")
-const { getAllLivrosService, getLivroByIdService, cadastrarLivroService, editarLivroService } = require("../../services/livros/livro")
+const { getAllLivrosService, getLivroByIdService, cadastrarLivroService, editarLivroService, deletarLivroService } = require("../../services/livros/livro")
 
 function getLivros(req, res) {
     try{
@@ -57,9 +57,25 @@ function editarLivro(req, res) {
    
 }
 
+
+
+function deletarLivro(req, res) {
+    try{
+        const id = req.params.id
+        deletarLivroService(id)
+        res.send("Livro removido com sucesso")
+    
+    }catch(error){
+        res.status(500)
+        res.send(error.message)
+    }
+   
+}
+
 module.exports = {
     getLivros,
     getLivroById,
     cadastrarLivro,
-    editarLivro
+    editarLivro,
+    deletarLivro
 }
