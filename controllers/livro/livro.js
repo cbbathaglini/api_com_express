@@ -17,6 +17,9 @@ function getLivros(req, res) {
 function getLivroById(req, res) {
     try{
         const id = req.params.id
+        if(!id || !Number(id)){
+            throw Error("Id inválido")
+        }
         const livro = getLivroByIdService(id)
         res.send(livro)
     }catch(error){

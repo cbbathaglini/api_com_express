@@ -22,3 +22,8 @@ Resultado:
         "nome": "Livro muito legal"
     }
 ]
+
+
+6) 
+https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers
+https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
